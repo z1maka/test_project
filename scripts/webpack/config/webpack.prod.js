@@ -1,41 +1,17 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import commonConfig from './webpack.common';
 import merge from 'webpack-merge';
+import * as modules from '../modules';
 
 export default () =>
-    merge(commonConfig(), {
-        mode: 'production',
-        devtool: false,
-        module: {
-            rules: [
-                {
-                    test: /\.s?css$/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                sourceMap: false,
-                            },
-                        },
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: false,
-                            },
-                        },
-                    ],
-                },
-            ],
+    merge(
+        commonConfig(),
+        {
+            mode: 'none',
+            devtool: false,
         },
-        plugins: [
-            new CleanWebpackPlugin({
-                verbose: true,
-            }),
-            new MiniCssExtractPlugin({
-                filename: 'css/[name].[id].css',
-                chunkFilename: 'css/[name].[id].css',
-            }),
-        ],
-    });
+        modules.loadCssProd(),
+        modules.miniCssExtractPlugin(),
+        modules.buildAnalyzer(),
+        modules.cleanFiles(),
+        modules.optimizationBuild()
+    );

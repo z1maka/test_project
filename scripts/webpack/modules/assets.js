@@ -1,3 +1,5 @@
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 export const loadAssets = () => ({
     module: {
         rules: [
@@ -48,6 +50,31 @@ export const loadAssets = () => ({
                         loader: 'file-loader',
                         options: {
                             name: 'fonts/[name].[ext]',
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+});
+
+export const loadCssProd = () => ({
+    module: {
+        rules: [
+            {
+                test: /\.s?css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: false,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: false,
                         },
                     },
                 ],

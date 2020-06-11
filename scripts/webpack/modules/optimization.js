@@ -1,6 +1,7 @@
 import ImageMinWebpack from 'imagemin-webpack';
+import TerserPlugin from 'terser-webpack-plugin';
 
-export const optimization = () => ({
+export const optimizationImages = () => ({
     plugins: [
         new ImageMinWebpack({
             bail: false,
@@ -23,4 +24,20 @@ export const optimization = () => ({
             },
         }),
     ],
+});
+
+export const optimizationBuild = () => ({
+    optimization: {
+        nodeEnv: 'production',
+
+        // дефолтные настройки для мода production
+        minimize: true,
+        minimizer: [
+            new TerserPlugin(),
+            // опции для минификации
+            // terserOptions: {
+            //
+            // }
+        ],
+    },
 });
