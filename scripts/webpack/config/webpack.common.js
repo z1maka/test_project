@@ -10,16 +10,16 @@ export default () =>
             entry: ['./src'],
             devtool: false,
             output: {
-                filename: 'js/bundle.js',
                 path: resolve(PROJECT_ROOT + '/dist'),
                 publicPath: '/',
+                hashDigestLength: 7, // длина хеша , чтоб не устанавливать везде
             },
         },
         modules.setENVPlugin(),
         modules.loadingBarPlugin(),
         modules.loadJavaScript(),
-        modules.loadStyles(),
         modules.loadAssets(),
         modules.loadHTMLPlugins(),
-        modules.optimizationImages()
+        modules.optimizationImages(),
+        modules.filterMomentLocales()
     );

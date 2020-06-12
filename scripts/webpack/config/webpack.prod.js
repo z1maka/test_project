@@ -6,8 +6,12 @@ export default () =>
     merge(
         commonConfig(),
         {
-            mode: 'none',
+            mode: 'production',
             devtool: false,
+            output: {
+                filename: 'js/[chunkhash].bundle.js', // entry point bundle name
+                chunkFilename: 'js/[chunkhash].chunk.js', // chunk name
+            },
         },
         modules.loadCssProd(),
         modules.miniCssExtractPlugin(),

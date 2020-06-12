@@ -5,16 +5,25 @@ import styled from 'styled-components';
 import background from '../assets/saler.jpg';
 import notFound from '../assets/not_found.png';
 import { ReactComponent as SvgIcon } from '../assets/swiper_arrow.svg';
+// import * as moment from 'moment';
 
 const Index = () => {
     const [count, setCount] = useState(0);
 
-    console.log('__ENV__', __ENV__)
-    console.log('__PROD__', __PROD__)
-    console.log('__DEV__', __DEV__)
-    console.log('__STAGE__', __STAGE__)
+    // const now = moment.now();
+    // console.log({ now });
 
-    const inc = () => {
+    console.log('__ENV__', __ENV__);
+    console.log('__PROD__', __PROD__);
+    console.log('__DEV__', __DEV__);
+    console.log('__STAGE__', __STAGE__);
+
+    const inc = async () => {
+        // с помощью комментария можно переиминовать имя чанка.
+        const text = (
+            await import(/* webpackChunkName: "lazyLoadedText" */ './Counter')
+        ).default;
+        console.log(text);
         setCount((prevValue) => prevValue + 1);
     };
 
@@ -24,7 +33,6 @@ const Index = () => {
 
     return (
         <Block>
-            <SvgIcon />
             <h2>My first</h2>
             <p>PARAGRAPH</p>
             <p>{`Count:${count}`}</p>
@@ -35,6 +43,7 @@ const Index = () => {
             <Image src={background} alt="bg" />
             <NotFound />
             <div className={style.myClass} />
+            <SvgIcon />
         </Block>
     );
 };

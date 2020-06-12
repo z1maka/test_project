@@ -9,7 +9,7 @@ export const loadAssets = () => ({
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name].[ext]',
+                            name: 'images/[name].[hash:7].[ext]',
                         },
                     },
                 ],
@@ -24,7 +24,7 @@ export const loadAssets = () => ({
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name].[ext]',
+                            name: 'images/[name].[hash:7].[ext]',
                         },
                     },
                 ],
@@ -38,7 +38,7 @@ export const loadAssets = () => ({
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name].[ext]',
+                            name: 'images/[name].[hash:7].[ext]',
                         },
                     },
                 ],
@@ -49,7 +49,7 @@ export const loadAssets = () => ({
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'fonts/[name].[ext]',
+                            name: 'fonts/[name].[hash:7].[ext]',
                         },
                     },
                 ],

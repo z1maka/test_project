@@ -4,7 +4,6 @@
     "description": "",
     "main": "index.js",
     "private": true,
-    "sideEffects": false,
     "scripts": {
         "build": "cross-env NODE_ENV=production node --require @babel/register \"./scripts/webpack/build.js\"",
         "start": "cross-env NODE_ENV=development node --require @babel/register \"./scripts/webpack/start.js\"",
@@ -17,6 +16,8 @@
         "@babel/core": "^7.10.2",
         "@babel/plugin-proposal-class-properties": "^7.10.1",
         "@babel/plugin-syntax-async-generators": "^7.8.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@babel/polyfill": "^7.10.1",
         "@babel/preset-env": "^7.10.2",
         "@babel/preset-react": "^7.10.1",
         "@babel/register": "^7.10.1",
