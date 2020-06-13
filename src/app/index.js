@@ -5,14 +5,15 @@ import styled from 'styled-components';
 import background from '../assets/saler.jpg';
 import notFound from '../assets/not_found.png';
 import { ReactComponent as SvgIcon } from '../assets/swiper_arrow.svg';
+import moment from 'moment';
 
 const Index = () => {
     const [count, setCount] = useState(0);
-
-    console.log('__ENV__', __ENV__)
-    console.log('__PROD__', __PROD__)
-    console.log('__DEV__', __DEV__)
-    console.log('__STAGE__', __STAGE__)
+    const now = moment.now();
+    console.log('__ENV__', __ENV__);
+    console.log('__PROD__', __PROD__);
+    console.log('__DEV__', __DEV__);
+    console.log('__STAGE__', __STAGE__);
 
     const inc = () => {
         setCount((prevValue) => prevValue + 1);
