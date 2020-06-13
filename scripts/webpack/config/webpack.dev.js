@@ -8,6 +8,10 @@ export default () =>
         {
             mode: 'development',
             devtool: 'cheap-module-source-map',
+            output: {
+                filename: 'js/[hash].bundle.js',
+                chunkFilename: 'js/[chunkhash].chunk.js',
+            },
             resolve: {
                 alias: {
                     'react-dom': '@hot-loader/react-dom',
@@ -16,5 +20,6 @@ export default () =>
             entry: ['webpack-hot-middleware/client?reload=true&quiet=true'],
         },
         modules.HOTReplacement(),
-        modules.friendlyErrorPlugin()
+        modules.friendlyErrorPlugin(),
+        modules.loadStyles()
     );

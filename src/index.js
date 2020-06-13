@@ -8,4 +8,3 @@ render(<App />, document.getElementById('app'));
 // TODO: hot reloading for react
 // react-hot-loader : babel плагин
 // react-hot-loader : исходный код
-// hot(module)(component)
