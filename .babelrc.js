@@ -4,7 +4,8 @@ module.exports = (api) => {
     api.cache.never();
     const plugins = [
         '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-proposal-class-properties',
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        ['@babel/plugin-proposal-class-properties', { loose: true }],
     ];
     if (env === 'development') {
         // Этот плагин не обязательный для релодинга React-клмпонентов
