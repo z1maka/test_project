@@ -1,0 +1,1 @@
+export { fetchStarShips } from './fetchStartships';

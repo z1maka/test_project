@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import background from '../../../static/assets/saler.jpg';
 import notFound from '../../../static/assets/not_found.png';
-import Nav from '../Nav';
+import IndexJs from '../../Components/Navigation';
 
 const Index = () => {
     console.log('__ENV__', __ENV__);
@@ -13,7 +13,7 @@ const Index = () => {
 
     return (
         <>
-            <Nav />
+            <IndexJs />
             <Block>
                 <h2>My first</h2>
                 <p>PARAGRAPH</p>

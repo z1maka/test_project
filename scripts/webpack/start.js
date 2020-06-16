@@ -12,7 +12,7 @@ const compiler = webpack(getDevConfig());
 
 // TODO HOT reloading
 // 1.Настроить на сервере
-// 2.Настроить на клиенте(добавит в src ссылку 'webpack-hot-middleware/client?reload=true&quiet=true' и плагин HotModuleReplacementPlugin)
+// 2.Настроить на клиенте(добавит в source ссылку 'webpack-hot-middleware/client?reload=true&quiet=true' и плагин HotModuleReplacementPlugin)
 // 4.Настроить в корневом компоненте module.hot
 
 (async () => {
@@ -20,7 +20,7 @@ const compiler = webpack(getDevConfig());
         const chosenPort = await choosePort(PORT);
         if (!chosenPort) {
             return console.log(
-                chalk.yellowBright("It's impossible to run the app :(")
+                chalk.yellowBright("It's impossible to run the Components :(")
             );
         }
         const server = new DevServer(compiler, {

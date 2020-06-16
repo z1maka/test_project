@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../../static/styles/main.scss';
+import styles from '../../../static/styles/main.scss';
 
-const Nav = () => {
+const Index = () => {
     return (
         <nav className={styles.navigation}>
             <Link to="/">Home</Link>
@@ -11,4 +11,4 @@ const Nav = () => {
     );
 };
 
-export default Nav;
+export default Index;

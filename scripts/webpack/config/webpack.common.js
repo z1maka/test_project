@@ -7,7 +7,7 @@ export default () =>
     merge(
         {
             mode: 'none',
-            entry: ['./src'],
+            entry: ['./source'],
             devtool: false,
             output: {
                 path: resolve(PROJECT_ROOT + '/dist'),

@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../Nav';
+import IndexJs from '../../Components/Navigation';
 import styles from '../../../static/styles/another.scss';
 import background from '../../../static/assets/saler.jpg';
 import styled from "styled-components";
@@ -8,7 +8,7 @@ import notFound from "../../../static/assets/not_found.png";
 const Component = () => {
     return (
         <>
-            <Nav />
+            <IndexJs />
             <div className={styles.zzz}>
                 <p>ANotherPage</p>
                 <p>ANotherPage</p>
